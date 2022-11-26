@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -172,11 +174,12 @@ public class MachineCoinTest {
             assertThat(billet5).isEqualTo(0);
         }
 
-        @Test
-        void zero_billet_5_for_value_8() {
-            int billet5 = change5(8);
+        @ParameterizedTest
+        @CsvSource({"8, 0"})
+        void zero_billet_5_for_value_8(int value, int expected) {
+            int billet5 = change5(value);
 
-            assertThat(billet5).isEqualTo(0);
+            assertThat(billet5).isEqualTo(expected);
         }
     }
 
