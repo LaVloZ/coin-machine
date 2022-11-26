@@ -71,7 +71,7 @@ public class MachineCoinTest {
 
     private int change5(int value) {
         int lastDigit = value % 10;
-        if (lastDigit == 1 || lastDigit == 5 || lastDigit == 7 || lastDigit == 9 || lastDigit == 3) return 1;
+        if (lastDigit == 1 || lastDigit == 3 || lastDigit == 5 || lastDigit == 7 || lastDigit == 9) return 1;
         return 0;
     }
 
