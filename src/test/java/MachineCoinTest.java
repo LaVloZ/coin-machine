@@ -27,12 +27,5 @@ public class MachineCoinTest {
     private int change2(int value) {
         return 1;
     }
-
-    public record Change(
-            int piece2,
-            int billet5,
-            int billet10
-    ) {
-    }
 }
 
