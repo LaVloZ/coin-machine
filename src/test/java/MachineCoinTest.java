@@ -1,5 +1,3 @@
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -7,141 +5,33 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MachineCoinTest {
 
-    @Nested
-    public class Piece2 {
+    @ParameterizedTest
+    @CsvSource({
+            "0, 0",
+            "5, 0",
+            "10, 0",
+            "15, 0",
+            "2, 1",
+            "7, 1",
+            "12, 1",
+            "17, 1",
+            "4, 2",
+            "9, 2",
+            "14, 2",
+            "19, 2",
+            "6, 3",
+            "11, 3",
+            "16, 3",
+            "21, 3",
+            "8, 4",
+            "13, 4",
+            "18, 4",
+            "23, 4",
+    })
+    void piece_2(int value, int expected) {
+        int pieces2 = change2(value);
 
-        @Test
-        public void zero_piece_2_for_value_0() {
-            int piece2 = change2(0);
-
-            assertThat(piece2).isEqualTo(0);
-        }
-
-        @Test
-        public void zero_piece_2_for_value_5() {
-            int piece2 = change2(5);
-
-            assertThat(piece2).isEqualTo(0);
-        }
-
-        @Test
-        public void zero_piece_2_for_value_10() {
-            int piece2 = change2(10);
-
-            assertThat(piece2).isEqualTo(0);
-        }
-
-        @Test
-        public void zero_piece_2_for_value_15() {
-            int piece2 = change2(15);
-
-            assertThat(piece2).isEqualTo(0);
-        }
-
-        @Test
-        public void one_piece_2_for_value_2() {
-            int piece2 = change2(2);
-
-            assertThat(piece2).isEqualTo(1);
-        }
-
-        @Test
-        public void one_piece_2_for_value_7() {
-            int piece2 = change2(2);
-
-            assertThat(piece2).isEqualTo(1);
-        }
-
-        @Test
-        public void one_piece_2_for_value_12() {
-            int piece2 = change2(2);
-
-            assertThat(piece2).isEqualTo(1);
-        }
-
-        @Test
-        public void two_pieces_2_for_value_4() {
-            int piece2 = change2(4);
-
-            assertThat(piece2).isEqualTo(2);
-        }
-
-        @Test
-        public void two_pieces_2_for_value_9() {
-            int piece2 = change2(9);
-
-            assertThat(piece2).isEqualTo(2);
-        }
-
-        @Test
-        public void two_pieces_2_for_value_14() {
-            int piece2 = change2(14);
-
-            assertThat(piece2).isEqualTo(2);
-        }
-
-        @Test
-        public void two_pieces_2_for_value_19() {
-            int piece2 = change2(19);
-
-            assertThat(piece2).isEqualTo(2);
-        }
-
-        @Test
-        public void three_pieces_2_for_value_6() {
-            int piece2 = change2(6);
-
-            assertThat(piece2).isEqualTo(3);
-        }
-
-        @Test
-        public void three_pieces_2_for_value_11() {
-            int piece2 = change2(11);
-
-            assertThat(piece2).isEqualTo(3);
-        }
-
-        @Test
-        public void three_pieces_2_for_value_16() {
-            int piece2 = change2(11);
-
-            assertThat(piece2).isEqualTo(3);
-        }
-
-        @Test
-        public void three_pieces_2_for_value_21() {
-            int piece2 = change2(11);
-
-            assertThat(piece2).isEqualTo(3);
-        }
-
-        @Test
-        public void four_pieces_2_for_value_8() {
-            int piece2 = change2(8);
-
-            assertThat(piece2).isEqualTo(4);
-        }
-
-        @Test
-        public void four_pieces_2_for_value_13() {
-            int piece2 = change2(13);
-
-            assertThat(piece2).isEqualTo(4);
-        }
-
-        @Test
-        public void four_pieces_2_for_value_18() {
-            int piece2 = change2(18);
-
-            assertThat(piece2).isEqualTo(4);
-        }
-
-        @Test
-        public void four_pieces_2_for_value_23() {
-            int piece2 = change2(23);
-
-            assertThat(piece2).isEqualTo(4);
-        }
+        assertThat(pieces2).isEqualTo(expected);
     }
 
     @ParameterizedTest
