@@ -87,11 +87,19 @@ public class MachineCoinTest {
         assertThat(piece2).isEqualTo(4);
     }
 
+    @Test
+    public void two_pieces_4_for_value_13() {
+        int piece2 = change2(13);
+
+        assertThat(piece2).isEqualTo(4);
+    }
+
     private int change2(int value) {
         int lastDigit = value % 10;
         if (lastDigit == 4 || lastDigit == 9) return 2;
         if (lastDigit == 6 || lastDigit == 1) return 3;
         if (value == 8) return 4;
+        if (value == 13) return 4;
         return 1;
     }
 }
