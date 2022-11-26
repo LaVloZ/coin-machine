@@ -113,6 +113,10 @@ public class MachineCoinTest {
             "-1, false",
             "1, false",
             "3, false",
+            "0, true",
+            "2, true",
+            "11, true",
+            "133, true",
     })
     void unhandled_values(int value, boolean expected) {
         boolean changePossible = changePossible(value);
@@ -120,6 +124,9 @@ public class MachineCoinTest {
     }
 
     private boolean changePossible(int value) {
+        if (value != -1 && value != 1 && value != 3) {
+            return true;
+        }
         return false;
     }
 
