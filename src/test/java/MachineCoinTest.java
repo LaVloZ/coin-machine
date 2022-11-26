@@ -5,27 +5,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MachineCoinTest {
     @Test
     public void piece_2_for_value_2() {
-        Change changedMoney = change(2);
+        int piece2 = change2(2);
 
-        assertThat(changedMoney.piece2).isEqualTo(1);
+        assertThat(piece2).isEqualTo(1);
     }
 
     @Test
     public void piece_2_for_value_7() {
-        Change changedMoney = change(2);
+        int piece2 = change2(2);
 
-        assertThat(changedMoney.piece2).isEqualTo(1);
+        assertThat(piece2).isEqualTo(1);
     }
 
     @Test
     public void piece_2_for_value_12() {
-        Change changedMoney = change(2);
+        int piece2 = change2(2);
 
-        assertThat(changedMoney.piece2).isEqualTo(1);
+        assertThat(piece2).isEqualTo(1);
     }
 
-    private Change change(int value) {
-        return new Change(1, 0, 0);
+    private int change2(int value) {
+        return 1;
     }
 
     public record Change(
