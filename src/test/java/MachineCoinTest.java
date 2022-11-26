@@ -108,6 +108,21 @@ public class MachineCoinTest {
         assertThat(billet10).isEqualTo(expected);
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "-1, false",
+            "1, false",
+            "3, false",
+    })
+    void unhandled_values(int value, boolean expected) {
+        boolean changePossible = changePossible(value);
+        assertThat(changePossible).isEqualTo(expected);
+    }
+
+    private boolean changePossible(int value) {
+        return false;
+    }
+
     private int change10(int value) {
         int lastDigit = value % 10;
         if (value >= 10) {
