@@ -6,9 +6,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MachineCoinTest {
     @Test
     public void piece_2() {
-        Change actual = change(2);
+        Change changedMoney = change(2);
 
-        assertThat(actual).isEqualTo(expectedChange(1, 0, 0));
+        assertThat(changedMoney).isEqualTo(expectedChange(1, 0, 0));
     }
 
     private Change expectedChange(int piece2, int billet5, int billet10) {
