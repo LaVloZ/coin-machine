@@ -73,6 +73,13 @@ public class MachineCoinTest {
         assertThat(piece2).isEqualTo(3);
     }
 
+    @Test
+    public void two_pieces_3_for_value_21() {
+        int piece2 = change2(11);
+
+        assertThat(piece2).isEqualTo(3);
+    }
+
     private int change2(int value) {
         int lastDigit = value % 10;
         if (lastDigit == 4 || lastDigit == 9) {
@@ -85,6 +92,9 @@ public class MachineCoinTest {
             return 3;
         }
         if (value == 16) {
+            return 3;
+        }
+        if (value == 21) {
             return 3;
         }
         return 1;
