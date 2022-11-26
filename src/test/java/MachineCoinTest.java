@@ -58,15 +58,8 @@ public class MachineCoinTest {
     }
 
     private int change5(int value) {
-        if (value == 5) {
-            return 1;
-        }
-        if (value == 15) {
-            return 1;
-        }
-        if (value == 25) {
-            return 1;
-        }
+        int lastDigit = value % 10;
+        if (lastDigit == 5) return 1;
         return 0;
     }
 
