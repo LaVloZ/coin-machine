@@ -23,6 +23,13 @@ public class MachineCoinTest {
         }
 
         @Test
+        public void zero_piece_2_for_value_10() {
+            int piece2 = change2(10);
+
+            assertThat(piece2).isEqualTo(0);
+        }
+
+        @Test
         public void one_piece_2_for_value_2() {
             int piece2 = change2(2);
 
