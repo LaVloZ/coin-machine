@@ -142,6 +142,20 @@ public class MachineCoinTest {
         }
     }
 
+    @Nested
+    public class Billet5 {
+        @Test
+        void zero_billet_5_for_value_0() {
+            int billet5 = change5(0);
+
+            assertThat(billet5).isEqualTo(0);
+        }
+    }
+
+    private int change5(int value) {
+        return 0;
+    }
+
     private int change2(int value) {
         int lastDigit = value % 10;
         if (lastDigit == 4 || lastDigit == 9) return 2;
