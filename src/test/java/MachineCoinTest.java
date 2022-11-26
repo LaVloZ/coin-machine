@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 
 public class MachineCoinTest {
     @Test
-    public void change_of_2() {
+    public void piece_2() {
         Change actual = change(2);
 
         Assertions.assertThat(actual.piece2).isEqualTo(1);
