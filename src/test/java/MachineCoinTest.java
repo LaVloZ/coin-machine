@@ -123,6 +123,25 @@ public class MachineCoinTest {
         assertThat(changePossible).isEqualTo(expected);
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "0, 0, 0, 0",
+            "33, 4, 1, 2",
+            "40, 0, 0, 4",
+            "28, 4, 0, 2",
+    })
+    void change_value(int value, int expectedPiece2, int expectedBillet5, int expectedBillet10) {
+        Change change = change(value);
+
+        assertThat(change.piece2).isEqualTo(expectedPiece2);
+        assertThat(change.billet5).isEqualTo(expectedBillet5);
+        assertThat(change.billet10).isEqualTo(expectedBillet10);
+    }
+
+    private Change change(int value) {
+        return new Change(change2(value), change5(value), change10(value));
+    }
+
     private boolean changePossible(int value) {
         return value != -1 && value != 1 && value != 3;
     }
@@ -164,6 +183,12 @@ public class MachineCoinTest {
         if (lastDigit == 0) return 0;
         if (lastDigit == 5) return 0;
         return 1;
+    }
+
+    public record Change(int piece2,
+                         int billet5,
+                         int billet10
+    ) {
     }
 }
 
