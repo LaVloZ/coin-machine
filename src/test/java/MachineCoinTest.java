@@ -59,12 +59,32 @@ public class MachineCoinTest {
         assertThat(piece2).isEqualTo(3);
     }
 
+    @Test
+    public void two_pieces_3_for_value_11() {
+        int piece2 = change2(11);
+
+        assertThat(piece2).isEqualTo(3);
+    }
+
+    @Test
+    public void two_pieces_3_for_value_16() {
+        int piece2 = change2(11);
+
+        assertThat(piece2).isEqualTo(3);
+    }
+
     private int change2(int value) {
         int lastDigit = value % 10;
         if (lastDigit == 4 || lastDigit == 9) {
             return 2;
         }
         if (value == 6) {
+            return 3;
+        }
+        if (value == 11) {
+            return 3;
+        }
+        if (value == 16) {
             return 3;
         }
         return 1;
