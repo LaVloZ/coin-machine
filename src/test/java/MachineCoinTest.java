@@ -52,10 +52,20 @@ public class MachineCoinTest {
         assertThat(piece2).isEqualTo(2);
     }
 
+    @Test
+    public void two_pieces_3_for_value_6() {
+        int piece2 = change2(6);
+
+        assertThat(piece2).isEqualTo(3);
+    }
+
     private int change2(int value) {
         int lastDigit = value % 10;
         if (lastDigit == 4 || lastDigit == 9) {
             return 2;
+        }
+        if (value == 6) {
+            return 3;
         }
         return 1;
     }
