@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MachineCoinTest {
     @Test
-    public void piece_2_for_value2() {
+    public void piece_2_for_value_2() {
         Change changedMoney = change(2);
 
         assertThat(changedMoney.piece2).isEqualTo(1);
