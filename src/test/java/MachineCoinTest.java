@@ -144,43 +144,18 @@ public class MachineCoinTest {
         }
     }
 
-    @Nested
-    public class Billet5 {
-        @Test
-        void zero_billet_5_for_value_0() {
-            int billet5 = change5(0);
+    @ParameterizedTest
+    @CsvSource({
+            "0, 0",
+            "2, 0",
+            "4, 0",
+            "6, 0",
+            "8, 0",
+    })
+    void billet_5(int value, int expected) {
+        int billet5 = change5(value);
 
-            assertThat(billet5).isEqualTo(0);
-        }
-
-        @Test
-        void zero_billet_5_for_value_2() {
-            int billet5 = change5(2);
-
-            assertThat(billet5).isEqualTo(0);
-        }
-
-        @Test
-        void zero_billet_5_for_value_4() {
-            int billet5 = change5(4);
-
-            assertThat(billet5).isEqualTo(0);
-        }
-
-        @Test
-        void zero_billet_5_for_value_6() {
-            int billet5 = change5(6);
-
-            assertThat(billet5).isEqualTo(0);
-        }
-
-        @ParameterizedTest
-        @CsvSource({"8, 0"})
-        void zero_billet_5_for_value_8(int value, int expected) {
-            int billet5 = change5(value);
-
-            assertThat(billet5).isEqualTo(expected);
-        }
+        assertThat(billet5).isEqualTo(expected);
     }
 
     private int change5(int value) {
