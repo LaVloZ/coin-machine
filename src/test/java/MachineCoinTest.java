@@ -83,6 +83,12 @@ public class MachineCoinTest {
             "13, 0",
             "10, 1",
             "12, 1",
+            "14, 1",
+            "15, 1",
+            "16, 1",
+            "17, 1",
+            "18, 1",
+            "19, 1",
     })
     void billet_10(int value, int expected) {
         int billet10 = change10(value);
@@ -97,6 +103,12 @@ public class MachineCoinTest {
         if (value == 12) {
             return 1;
         }
+        if (value == 14) return 1;
+        if (value == 15) return 1;
+        if (value == 16) return 1;
+        if (value == 17) return 1;
+        if (value == 18) return 1;
+        if (value == 19) return 1;
         return 0;
     }
 
