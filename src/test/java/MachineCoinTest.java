@@ -7,6 +7,14 @@ public class MachineCoinTest {
 
     @Nested
     public class Piece2 {
+
+        @Test
+        public void zero_piece_2_for_value_0() {
+            int piece2 = change2(0);
+
+            assertThat(piece2).isEqualTo(0);
+        }
+
         @Test
         public void one_piece_2_for_value_2() {
             int piece2 = change2(2);
@@ -118,6 +126,7 @@ public class MachineCoinTest {
         if (lastDigit == 4 || lastDigit == 9) return 2;
         if (lastDigit == 6 || lastDigit == 1) return 3;
         if (lastDigit == 8 || lastDigit == 3) return 4;
+        if (lastDigit == 0) return 0;
         return 1;
     }
 }
