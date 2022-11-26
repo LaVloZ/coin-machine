@@ -89,6 +89,8 @@ public class MachineCoinTest {
             "17, 1",
             "18, 1",
             "19, 1",
+            "21, 1",
+            "23, 1",
     })
     void billet_10(int value, int expected) {
         int billet10 = change10(value);
@@ -107,6 +109,8 @@ public class MachineCoinTest {
             if (lastDigit == 7) return 1;
             if (lastDigit == 8) return 1;
             if (lastDigit == 9) return 1;
+            if (value == 21) return 1;
+            if (value == 23) return 1;
         }
         return 0;
     }
