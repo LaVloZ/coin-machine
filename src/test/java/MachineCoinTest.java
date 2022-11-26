@@ -126,16 +126,24 @@ public class MachineCoinTest {
 
     private int change5(int value) {
         int lastDigit = value % 10;
-        if (lastDigit == 1 || lastDigit == 3 || lastDigit == 5 || lastDigit == 7 || lastDigit == 9) return 1;
+        if (lastDigit == 1) return 1;
+        if (lastDigit == 3) return 1;
+        if (lastDigit == 5) return 1;
+        if (lastDigit == 7) return 1;
+        if (lastDigit == 9) return 1;
         return 0;
     }
 
     private int change2(int value) {
         int lastDigit = value % 10;
-        if (lastDigit == 4 || lastDigit == 9) return 2;
-        if (lastDigit == 6 || lastDigit == 1) return 3;
-        if (lastDigit == 8 || lastDigit == 3) return 4;
-        if (lastDigit == 0 || lastDigit == 5) return 0;
+        if (lastDigit == 4) return 2;
+        if (lastDigit == 9) return 2;
+        if (lastDigit == 6) return 3;
+        if (lastDigit == 1) return 3;
+        if (lastDigit == 8) return 4;
+        if (lastDigit == 3) return 4;
+        if (lastDigit == 0) return 0;
+        if (lastDigit == 5) return 0;
         return 1;
     }
 }
