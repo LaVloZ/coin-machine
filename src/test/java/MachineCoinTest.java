@@ -101,14 +101,14 @@ public class MachineCoinTest {
     private int change10(int value) {
         int lastDigit = value % 10;
         if (value >= 10) {
-            if (lastDigit == 0) return 1;
-            if (lastDigit == 2) return 1;
-            if (lastDigit == 4) return 1;
-            if (lastDigit == 5) return 1;
-            if (lastDigit == 6) return 1;
-            if (lastDigit == 7) return 1;
-            if (lastDigit == 8) return 1;
-            if (lastDigit == 9) return 1;
+            if (lastDigit == 0) return value / 10;
+            if (lastDigit == 2) return value / 10;
+            if (lastDigit == 4) return value / 10;
+            if (lastDigit == 5) return value / 10;
+            if (lastDigit == 6) return value / 10;
+            if (lastDigit == 7) return value / 10;
+            if (lastDigit == 8) return value / 10;
+            if (lastDigit == 9) return value / 10;
             if (value == 21) return 1;
             if (value == 23) return 1;
         }
