@@ -124,10 +124,10 @@ public class MachineCoinTest {
     }
 
     private boolean changePossible(int value) {
-        if (value != -1 && value != 1 && value != 3) {
-            return true;
+        if (value == -1 || value == 1 || value == 3) {
+            return false;
         }
-        return false;
+        return true;
     }
 
     private int change10(int value) {
