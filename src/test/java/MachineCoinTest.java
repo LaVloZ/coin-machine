@@ -85,16 +85,16 @@ public class MachineCoinTest {
         if (lastDigit == 4 || lastDigit == 9) {
             return 2;
         }
-        if (value == 6) {
+        if (lastDigit == 6) {
             return 3;
         }
-        if (value == 11) {
+        if (lastDigit == 1) {
             return 3;
         }
-        if (value == 16) {
+        if (lastDigit == 6) {
             return 3;
         }
-        if (value == 21) {
+        if (lastDigit == 1) {
             return 3;
         }
         return 1;
