@@ -69,6 +69,27 @@ public class MachineCoinTest {
         assertThat(billet5).isEqualTo(expected);
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "0, 0",
+            "2, 0",
+            "4, 0",
+            "5, 0",
+            "6, 0",
+            "7, 0",
+            "8, 0",
+            "9, 0",
+    })
+    void billet_10(int value, int expected) {
+        int billet10 = change10(value);
+
+        assertThat(billet10).isEqualTo(expected);
+    }
+
+    private int change10(int value) {
+        return 0;
+    }
+
     private int change5(int value) {
         int lastDigit = value % 10;
         if (lastDigit == 1 || lastDigit == 3 || lastDigit == 5 || lastDigit == 7 || lastDigit == 9) return 1;
