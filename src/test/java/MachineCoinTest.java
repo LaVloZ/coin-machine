@@ -112,10 +112,7 @@ public class MachineCoinTest {
         int lastDigit = value % 10;
         if (lastDigit == 4 || lastDigit == 9) return 2;
         if (lastDigit == 6 || lastDigit == 1) return 3;
-        if (value == 8) return 4;
-        if (value == 13) return 4;
-        if (value == 18) return 4;
-        if (value == 23) return 4;
+        if (lastDigit == 8 || lastDigit == 3) return 4;
         return 1;
     }
 }
