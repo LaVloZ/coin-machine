@@ -7,11 +7,7 @@ public class MachineCoinTest {
     public void piece_2_for_value2() {
         Change changedMoney = change(2);
 
-        assertThat(changedMoney).isEqualTo(expectedChange(1, 0, 0));
-    }
-
-    private Change expectedChange(int piece2, int billet5, int billet10) {
-        return new Change(piece2, billet5, billet10);
+        assertThat(changedMoney.piece2).isEqualTo(1);
     }
 
     private Change change(int value) {
