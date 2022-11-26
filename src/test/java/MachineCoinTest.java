@@ -122,7 +122,7 @@ public class MachineCoinTest {
             if (value == 21) return 1;
             if (value == 23) return 1;
             if (value == 31) return 2;
-            if (value == 33) return 2;
+            if (lastDigit == 3) return value / 10 - 1;
         }
         return 0;
     }
