@@ -157,11 +157,16 @@ public class MachineCoinTest {
 
             assertThat(billet5).isEqualTo(0);
         }
+
+        @Test
+        void zero_billet_5_for_value_4() {
+            int billet5 = change5(4);
+
+            assertThat(billet5).isEqualTo(0);
+        }
     }
 
     private int change5(int value) {
-        if (value == 2)
-            return 0;
         return 0;
     }
 
