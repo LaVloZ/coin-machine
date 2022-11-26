@@ -53,16 +53,11 @@ public class MachineCoinTest {
     }
 
     private int change2(int value) {
-        if (value == 4) {
+        int lastDigit = value % 10;
+        if (lastDigit == 4) {
             return 2;
         }
-        if (value == 9) {
-            return 2;
-        }
-        if (value == 14) {
-            return 2;
-        }
-        if (value == 19) {
+        if (lastDigit == 9) {
             return 2;
         }
         return 1;
