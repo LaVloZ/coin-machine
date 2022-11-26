@@ -138,12 +138,31 @@ public class MachineCoinTest {
         assertThat(change.billet10).isEqualTo(expectedBillet10);
     }
 
+    @ParameterizedTest
+    @CsvSource({
+            "-100",
+            "-50",
+            "-4",
+            "-3",
+            "-1",
+            "1",
+            "3",
+    })
+    void change_unhandled_value(int value) {
+        Change change = change(value);
+
+        assertThat(change).isNull();
+    }
+
     private Change change(int value) {
-        return new Change(change2(value), change5(value), change10(value));
+        if (changePossible(value)) {
+            return new Change(change2(value), change5(value), change10(value));
+        }
+        return null;
     }
 
     private boolean changePossible(int value) {
-        return value != -1 && value != 1 && value != 3;
+        return value >= 0 && value != 1 && value != 3;
     }
 
     private int change10(int value) {
