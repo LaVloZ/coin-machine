@@ -1,12 +1,14 @@
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class MachineCoinTest {
     @Test
     public void piece_2() {
         Change actual = change(2);
 
-        Assertions.assertThat(actual.piece2).isEqualTo(1);
+        assertThat(actual.piece2).isEqualTo(1);
     }
 
     private Change change(int value) {
