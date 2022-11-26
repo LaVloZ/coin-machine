@@ -91,6 +91,14 @@ public class MachineCoinTest {
             "19, 1",
             "21, 1",
             "23, 1",
+            "20, 2",
+            "22, 2",
+            "24, 2",
+            "25, 2",
+            "26, 2",
+            "27, 2",
+            "28, 2",
+            "29, 2",
     })
     void billet_10(int value, int expected) {
         int billet10 = change10(value);
