@@ -53,6 +53,9 @@ public class MachineCoinTest {
             "7, 1",
             "17, 1",
             "27, 1",
+            "9, 1",
+            "19, 1",
+            "29, 1",
     })
     void billet_5(int value, int expected) {
         int billet5 = change5(value);
@@ -62,7 +65,7 @@ public class MachineCoinTest {
 
     private int change5(int value) {
         int lastDigit = value % 10;
-        if (lastDigit == 5 || lastDigit == 7) return 1;
+        if (lastDigit == 5 || lastDigit == 7 || lastDigit == 9) return 1;
         return 0;
     }
 
