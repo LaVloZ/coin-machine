@@ -48,6 +48,7 @@ public class MachineCoinTest {
             "18, 0",
             "20, 0",
             "5, 1",
+            "15, 1",
     })
     void billet_5(int value, int expected) {
         int billet5 = change5(value);
@@ -57,6 +58,9 @@ public class MachineCoinTest {
 
     private int change5(int value) {
         if (value == 5) {
+            return 1;
+        }
+        if (value == 15) {
             return 1;
         }
         return 0;
