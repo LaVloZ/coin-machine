@@ -16,6 +16,13 @@ public class MachineCoinTest {
         }
 
         @Test
+        public void zero_piece_2_for_value_5() {
+            int piece2 = change2(5);
+
+            assertThat(piece2).isEqualTo(0);
+        }
+
+        @Test
         public void one_piece_2_for_value_2() {
             int piece2 = change2(2);
 
@@ -127,6 +134,7 @@ public class MachineCoinTest {
         if (lastDigit == 6 || lastDigit == 1) return 3;
         if (lastDigit == 8 || lastDigit == 3) return 4;
         if (lastDigit == 0) return 0;
+        if (lastDigit == 5) return 0;
         return 1;
     }
 }
