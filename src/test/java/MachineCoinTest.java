@@ -38,11 +38,21 @@ public class MachineCoinTest {
         assertThat(piece2).isEqualTo(2);
     }
 
+    @Test
+    public void two_pieces_2_for_value_14() {
+        int piece2 = change2(14);
+
+        assertThat(piece2).isEqualTo(2);
+    }
+
     private int change2(int value) {
         if (value == 4) {
             return 2;
         }
         if (value == 9) {
+            return 2;
+        }
+        if (value == 14) {
             return 2;
         }
         return 1;
